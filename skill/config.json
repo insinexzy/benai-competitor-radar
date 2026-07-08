@@ -1,0 +1,43 @@
+{
+  "dashboard": {
+    "title": "Competitor Radar",
+    "brand": "Ben AI",
+    "live_url": "https://benai-competitor-radar.vercel.app",
+    "deploy_repo": "insinexzy/benai-competitor-radar",
+    "slack_channel": "#team-chat",
+    "refresh": "weekly (Mon 09:00 IST)"
+  },
+  "platforms": ["youtube", "instagram", "linkedin", "tiktok", "community", "seo"],
+  "apify_actors": {
+    "instagram": "apify/instagram-scraper",
+    "tiktok": "clockworks/tiktok-scraper",
+    "linkedin_profile": "dev_fusion/Linkedin-Profile-Scraper",
+    "linkedin_posts": "harvestapi/linkedin-profile-posts",
+    "twitter": "apidojo/tweet-scraper"
+  },
+  "data_sources": {
+    "youtube": "youtube / vidiq connector (YouTube Data API) — real, primary",
+    "instagram_linkedin_tiktok": "Apify actors above",
+    "community": "Firecrawl on the public Skool/Circle page",
+    "seo": "Firecrawl on the SimilarWeb public page (est. visits + global rank)"
+  },
+  "roster": {
+    "demo": [
+      {"name": "Mark Tilbury", "youtube": "@MarkTilbury", "instagram": "marktilbury", "tiktok": "marktilbury", "linkedin": null, "community": null, "web": "marktilbury.com"},
+      {"name": "Graham Stephan", "youtube": "@GrahamStephan", "instagram": "grahamstephan", "tiktok": "grahamstephan", "linkedin": "grahamstephan", "community": "The Creator Academy", "web": "grahamstephan.com"},
+      {"name": "Andrei Jikh", "youtube": "@AndreiJikh", "instagram": "andreijikh", "tiktok": "andreijikh", "linkedin": null, "community": null, "web": "andreijikh.com"},
+      {"name": "Humphrey Yang", "youtube": "@HumphreyYang", "instagram": "humphreytalks", "tiktok": "humphreytalks", "linkedin": "humphreyyang", "community": null, "web": "humphreytalks.com"},
+      {"name": "Nate O'Brien", "youtube": "@NateOBrien", "instagram": "nateobrien", "tiktok": "nateobrien", "linkedin": null, "community": null, "web": "nateobrien.com"},
+      {"name": "Ben AI", "youtube": "@benai92", "instagram": "benai", "tiktok": "benai", "linkedin": "benai", "community": "Ben AI (Circle)", "web": "benai.co", "you": true}
+    ],
+    "actual": [
+      {"name": "Nate Herk", "youtube": "@NateHerk", "instagram": null, "tiktok": null, "linkedin": "nateherk", "community": "AI Automation Society", "web": "aiautomators.com"},
+      {"name": "Liam Ottley", "youtube": "@LiamOttley", "instagram": "liamottley", "tiktok": "liamottley", "linkedin": "liamottley", "community": "AAA Accelerator (Skool)", "web": "morningside.ai"},
+      {"name": "Nick Saraev", "youtube": "@NickSaraev", "instagram": "nicksaraev", "tiktok": null, "linkedin": "nicksaraev", "community": "Maker School (Skool)", "web": "leftclick.ai"},
+      {"name": "Riley Brown", "youtube": "@RileyBrownAI", "instagram": "rileybrown.ai", "tiktok": "rileybrown.ai", "linkedin": "rileybrown", "community": null, "web": "vibecode.com"},
+      {"name": "Jack Roberts", "youtube": "@JackRobertsAI", "instagram": "jackroberts", "tiktok": "jackroberts", "linkedin": "jackroberts", "community": null, "web": null},
+      {"name": "AI Jason", "youtube": "@AIJasonZ", "instagram": null, "tiktok": null, "linkedin": "jasonzhou", "community": null, "web": null},
+      {"name": "Ben AI", "youtube": "@benai92", "instagram": "benai", "tiktok": "benai", "linkedin": "benai", "community": "Ben AI (Circle)", "web": "benai.co", "you": true}
+    ]
+  }
+}
