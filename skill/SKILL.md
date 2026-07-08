@@ -17,8 +17,8 @@ Tracks a fixed roster of competitors weekly and renders one branded HTML dashboa
 ## Weekly refresh workflow
 
 1. **Read** `config.json` (roster) and the current `radar_data.js` (last week's numbers, needed for week-over-week deltas).
-2. **Gather fresh data via connectors** for each creator (do NOT fabricate; mark missing as `null`):
-   - **YouTube** (youtube / vidiq connector, real): subscribers, uploads in last 7 days (title + views), median views + median engagement on last ~10 videos, standout video of the week.
+2. **Gather fresh data** for each creator (do NOT fabricate; mark missing as `null`). Locally, use the Apify / Firecrawl / youtube MCP connectors. **In a cloud routine those are local plugins and are NOT available** — call the Apify HTTP API directly (the routine injects an `APIFY_TOKEN`), doing each run + parse in ONE Bash call (env does not persist between Bash calls in cloud): `curl -s -X POST "https://api.apify.com/v2/acts/<actor>/run-sync-get-dataset-items?token=$APIFY_TOKEN" -H "Content-Type: application/json" -d '<input>'` (actor id uses `~` not `/`). Route YouTube through an Apify YouTube actor when the youtube connector is absent. Sources:
+   - **YouTube** (youtube / vidiq connector locally; Apify `streamers~youtube-scraper` or WebFetch the `/about` page in cloud): subscribers, uploads in last 7 days (title + views), median views + median engagement on last ~10 videos, standout video of the week.
    - **Instagram** (Apify `apify/instagram-scraper`): followers, posts last 7d, avg engagement.
    - **TikTok** (Apify `clockworks/tiktok-scraper`): followers, posts last 7d, avg engagement.
    - **LinkedIn** (Apify `dev_fusion/Linkedin-Profile-Scraper` + `harvestapi/linkedin-profile-posts`): followers, posts last 7d, avg engagement.
