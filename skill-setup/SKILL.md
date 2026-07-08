@@ -28,7 +28,7 @@ The dashboard needs scrapers. Get them connected before building.
 - **Apify** (social scraping). If not connected, walk them through adding the Apify connector / API token. Then map platforms to these battle-tested actors:
   - Instagram: `apify/instagram-scraper`
   - TikTok: `clockworks/tiktok-scraper`
-  - LinkedIn: `dev_fusion/Linkedin-Profile-Scraper` (+ `harvestapi/linkedin-profile-posts` for post cadence)
+  - LinkedIn: `harvestapi/linkedin-profile-scraper` (works on the Apify FREE plan; `dev_fusion` does not). Input `{"queries":["<profile-url>"],"profileScraperMode":"Profile details no email ($4 per 1k)"}`, follower count is `followerCount`
   - X/Twitter: `apidojo/tweet-scraper`
   - YouTube (fallback if no YouTube API): `automation-lab/youtube-scraper`
 - **Firecrawl** (everything non-social: community member counts from public Skool/Circle pages, SEO from SimilarWeb public pages, any website audit). If not connected, help them get a Firecrawl API key and install the `firecrawl` skill. Firecrawl cannot scrape social; that is why Apify is required too.

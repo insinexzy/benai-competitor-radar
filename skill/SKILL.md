@@ -21,7 +21,7 @@ Tracks a fixed roster of competitors weekly and renders one branded HTML dashboa
    - **YouTube** (youtube / vidiq connector locally; Apify `streamers~youtube-scraper` or WebFetch the `/about` page in cloud): subscribers, uploads in last 7 days (title + views), median views + median engagement on last ~10 videos, standout video of the week.
    - **Instagram** (Apify `apify/instagram-scraper`): followers, posts last 7d, avg engagement.
    - **TikTok** (Apify `clockworks/tiktok-scraper`): followers, posts last 7d, avg engagement.
-   - **LinkedIn** (Apify `dev_fusion/Linkedin-Profile-Scraper` + `harvestapi/linkedin-profile-posts`): followers, posts last 7d, avg engagement.
+   - **LinkedIn** (Apify `harvestapi/linkedin-profile-scraper`, works on the FREE plan; input `{"queries":["https://www.linkedin.com/in/<slug>/"],"profileScraperMode":"Profile details no email ($4 per 1k)"}`, follower count is the `followerCount` field. Do NOT use `dev_fusion` — it is blocked on free): followers.
    - **Community** (Firecrawl on the public Skool/Circle page): member count.
    - **SEO** (Firecrawl on the SimilarWeb public page for the domain): est. monthly visits + global rank. If SimilarWeb blocks, set `null`.
 3. **Compute deltas**: set each creator's `youtube.prev` to last week's `youtube.subs` before overwriting `subs`, so the demo tab shows week-over-week growth. (Actual tab omits deltas; it is blurred on camera.)
